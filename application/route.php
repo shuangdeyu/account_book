@@ -20,4 +20,5 @@ return [
 
     // 主页
     'index' => 'index/index/index',
+    'login' => 'index/index/login',
 ];

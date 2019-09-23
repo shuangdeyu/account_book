@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>好记账-登录</title>
+</head>
+
+<!--<link href="__ZUI__/css/zui.min.css" rel="stylesheet">-->
+<link href="__CSS__/paper.min.css" rel="stylesheet">
+<style>
+    body {
+        background-image: url("__IMG__/back1.png");
+    }
+
+    .login-box {
+        width: 500px;
+        height: 400px;
+        margin: -200px 0 0 -250px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        padding: 5px 10px;
+        background-color: #ffffff;
+        /*box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);*/
+    }
+
+    .login-box .title {
+        text-align: center;
+        color: #077e7a;
+        font-size: 1.5rem;
+        margin-block-start: 1.23em;
+        margin-block-end: 1.23em;
+        letter-spacing: 5px;
+    }
+
+    .login-box .form { padding: 0 25px; }
+    .login-box .form .row { margin-bottom: 5px; }
+    .login-box .form label { margin-right: 0px; margin-top: 10px;width: 21%; }
+    .login-box .form .form-group { width: 70%; }
+</style>
+<body>
+<div>
+    <div class="login-box card">
+        <div class="title">
+            <b>好记账</b>
+        </div>
+
+        <div class="form">
+            <div class="row">
+                <label >用户名：</label>
+                <div class="form-group">
+                    <input class="input-block" type="text">
+                </div>
+            </div>
+            <div class="row">
+                <label >密码：</label>
+                <div class="form-group">
+                    <input class="input-block" type="text">
+                </div>
+            </div>
+
+            <div class="row" style="margin: auto 0;">
+                <div class="col-3 col"></div>
+                <div class="col-3 col">
+                    <button class="btn-secondary btn-small"> 登录 </button>
+                </div>
+                <div class="col-3 col">
+                    <button class="btn-warning btn-small"> 注册 </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

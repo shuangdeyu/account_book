@@ -1,4 +1,5 @@
 <?php
+
 namespace app\index\controller;
 
 use think\Request;
@@ -13,7 +14,16 @@ class Index extends Base
     /**
      * 首页
      */
-    public function index(){
+    public function index()
+    {
         return view('index/index');
+    }
+
+    /**
+     * 登录页
+     */
+    public function login()
+    {
+        return view('index/login');
     }
 }
