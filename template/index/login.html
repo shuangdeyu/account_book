@@ -6,6 +6,7 @@
 </head>
 
 <!--<link href="__ZUI__/css/zui.min.css" rel="stylesheet">-->
+<link href="__CSS__/style.css" rel="stylesheet">
 <link href="__CSS__/paper.min.css" rel="stylesheet">
 <style>
     body {
@@ -33,10 +34,23 @@
         letter-spacing: 5px;
     }
 
-    .login-box .form { padding: 0 25px; }
-    .login-box .form .row { margin-bottom: 5px; }
-    .login-box .form label { margin-right: 0px; margin-top: 10px;width: 21%; }
-    .login-box .form .form-group { width: 70%; }
+    .login-box .form {
+        padding: 0 25px;
+    }
+
+    .login-box .form .row {
+        margin-bottom: 5px;
+    }
+
+    .login-box .form label {
+        margin-right: 0px;
+        margin-top: 10px;
+        width: 21%;
+    }
+
+    .login-box .form .form-group {
+        width: 70%;
+    }
 </style>
 <body>
 <div>
@@ -47,30 +61,58 @@
 
         <div class="form">
             <div class="row">
-                <label >用户名：</label>
+                <label>用户名：</label>
                 <div class="form-group">
-                    <input class="input-block" type="text">
+                    <input class="input-block" type="text" id="UserName">
                 </div>
             </div>
             <div class="row">
-                <label >密码：</label>
+                <label>密码：</label>
                 <div class="form-group">
-                    <input class="input-block" type="text">
+                    <input class="input-block" type="text" id="Password">
                 </div>
             </div>
 
             <div class="row" style="margin: auto 0;">
                 <div class="col-3 col"></div>
                 <div class="col-3 col">
-                    <button class="btn-secondary btn-small"> 登录 </button>
+                    <button class="btn-secondary btn-small" onclick="login()"> 登录</button>
                 </div>
                 <div class="col-3 col">
-                    <button class="btn-warning btn-small"> 注册 </button>
+                    <button class="btn-warning btn-small"> 注册</button>
                 </div>
             </div>
         </div>
 
     </div>
 </div>
+
+<div id="ShowMsg"></div>
+
+<script src="__JS__/jquery-3.1.1.min.js"></script>
+<script src="__JS__/common.js"></script>
+<script>
+    // 登录
+    function login() {
+        var user_name = $("#UserName").val();
+        var password = $("#Password").val();
+        if (user_name == "") {
+            show("alert-danger", "用户名和密码不能为空！");
+            return
+        }
+
+        $.ajax({
+            type: "post",
+            url: "URL/login",
+            dataType: "json",
+            data: {user_name: user_name, password: password, submit: 1},
+            success: function (res) {
+                if (res.code > 0) {
+                    show("alert-danger", res.msg);
+                }
+            }
+        })
+    }
+</script>
 </body>
 </html>

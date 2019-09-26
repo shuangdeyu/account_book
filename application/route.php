@@ -19,6 +19,7 @@ return [
     ],
 
     // 主页
-    'index' => 'index/index/index',
-    'login' => 'index/index/login',
+    'index' => 'index/index/index',         // 主页
+    'login' => 'index/index/login',         // 登录
+    'register' => 'index/index/register',   // 注册
 ];
